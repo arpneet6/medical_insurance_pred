@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Medical Cost Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="grey" role="navigation">
+   <style>
+    #logo-container {
+        position: fixed;
+        top: 5px;
+        left: 10px;
+        width: 2px; /* Adjust the width as needed */
+        height: 0.5px; /* Automatically adjust height based on aspect ratio */
+            }
+</style>
+
+<div class="nav-wrapper container">
+    <a id="logo-container" href="https://www.jdfulwiler.com/wp-content/uploads/2017/08/abc-company-test-logo-300x205.png" class="brand-logo">
+        <img src="https://www.jdfulwiler.com/wp-content/uploads/2017/08/abc-company-test-logo-300x205.png">
+    </a>
+</div>
+
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Learning Project</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Learning Project</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center light blue-text">Predicting your Medical Insurance</h1>
+      <div class="row center">
+        <h5 class="header col s12 light black-text">Predict the cost for your Medical Insurance!
+        <br>
+        </h5>
+      </div>
+
+<div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="first_name" style="font-size: 20px"><b>Age</b></label>
+            <br>
+            <input placeholder="Age" name="age" id="age" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="_name" style="font-size: 20px"><b>Gender</b></label>
+            <br>
+            <input id="_name" name="Gender" placeholder="0 - Male/1 - Female" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="last_name" style="font-size: 20px"><b>BMI</b></label>
+              <br>
+            <input id="bmi" name="bmi" placeholder="BMI"  type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+
+            <label for="last_name" style="font-size: 20px"><b>Childrens</b></label>
+              <br>
+            <input id="children" name="children" placeholder="0 for None"  type="text" class="validate">
+  
+          </div>
+
+        <div class="input-field col s4">
+            <label for="smoker" style="font-size: 20px"><b>Do you Smoke?</b></label>
+            <br>
+            <input id="smoker" name="smoker" placeholder="1 - Yes/0 - No" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="region" style="font-size: 20px"><b>Which Region?</b></label>
+            <br>
+            <input id="region" name="region" placeholder="0-NW/1-NE/2-SE/3-SW" type="text" class="validate">
+        </div>
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light lamber lighten-1">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+      <div class="dark-text">
+      <br>
+        <h4>{{pred}}</h4><br>
+      </div>
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer grey lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">
+Motivated by the curiosity to understand how insurance amounts are determined, a dataset was explored to predict insurance amounts based on various features. The categorical values were converted to numerical, and a heatmap and data visualization plots were created to analyze dependencies. Skewness and kurtosis were examined, followed by predictions using linear regression, SVR, ridge regressor, and random forest regressor. Hyperparameter tuning was performed for the models, and a graph was plotted to compare their performance. The model achieved an 86% accuracy for medical insurance amount prediction. The final model was deployed using Flask, enabling users to interact with it.</p>
+        </div>
+        
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.linkedin.com/in/arpneet-kaur-179a58117/">LinkedIn</a></li>
+        
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../static/js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
